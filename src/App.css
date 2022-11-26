@@ -1,0 +1,67 @@
+:root {
+  --yellow: linear-gradient(180deg, #A4A6B3 -146.42%, #9fa2b4 -46.42%);
+  --orange: #3751FF;
+  --black: #242d49;
+  --gray: #788097;
+  --purple: linear-gradient(180deg, #BB67FF 0%, #C484F3 100%);
+  --pink:  #19135d ;
+  --glass: rgba(255, 255, 255, 0.54);
+  --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+  --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+  --activeItem: #f90030;
+  --brightBlue: #3498db;
+  --darkGrayishBlue: #8b8d94;
+  --darkRed: #a90000;
+  --grayishBlue: #A4A6B3;
+  --grayishBlue2: #9fa2b4;
+  --grayishBlue3: #bdc3c7;
+  --lightBlue: #3751FF;
+  --lightGrayishBlue: #F7F8FC; 
+  --lightGrayishBlue2: #DFE0EB;
+  --paleBlue: #DDE2FF;
+  --paleBlueTransparent: rgba(221, 226, 255, 0.08);
+  --veryDarkGrayishBlue: #373a47;
+}
+
+.App {
+  /* padding: 0.5rem 3.5rem; */
+  color: var(--black);
+  background: linear-gradient(
+    106.37deg,
+    #F7F8FC 29.63%,
+    #F7F8FC 51.55%,
+    #F7F8FC 90.85%
+  );
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: .1px;
+
+}
+
+.AppGlass {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  background: var(--glass);
+  border-radius: 2rem;
+  gap: 16px;
+  grid-template-columns: 11rem auto 20rem;
+  overflow: hidden;
+  margin-bottom: .1px;
+}
+
+@media screen and (max-width: 1200px) {
+  .AppGlass{
+    grid-template-columns: 10% 50% auto;
+    overflow-y: scroll;
+  } 
+}
+
+@media screen and (max-width: 768px) {
+  .AppGlass{
+    grid-template-columns: 1fr;
+  } 
+}
