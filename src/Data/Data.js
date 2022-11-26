@@ -16,6 +16,7 @@ import HandshakeIcon from '@mui/icons-material/Handshake';
 import InterpreterModeIcon from '@mui/icons-material/InterpreterMode';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import HotelIcon from '@mui/icons-material/Hotel';
+import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 // Recent Card Imports
 import img1 from "../imgs/img1.png";
 import img2 from "../imgs/img2.png";
@@ -66,6 +67,10 @@ export const SidebarData = [
   path:"/hotels",
   heading: 'Hotels'
 },
+{icon: ThumbUpAltIcon,
+  path:"/testimentials",
+  heading: 'Testimentials'
+},
 {icon: ArticleIcon,
   path:"/blogs",
   heading: 'Blogs'
@@ -75,14 +80,14 @@ export const SidebarData = [
 // Analytics Cards Data
 export const cardsData = [
   {
-    title: "Sales",
+    title: "Participants",
     color: {
       backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
       boxShadow: "0px 10px 20px 0px #e0c6f5",
     },
     barValue: 70,
     value: "25,970",
-    png: UilUsdSquare,
+    png: UilUsersAlt,
     series: [
       {
         name: "Sales",
@@ -91,7 +96,7 @@ export const cardsData = [
     ],
   },
   {
-    title: "Revenue",
+    title: "Sponsors",
     color: {
       backGround: "linear-gradient(180deg, #FF919D 0%, #FC929D 100%)",
       boxShadow: "0px 10px 20px 0px #FDC0C7",
@@ -107,7 +112,7 @@ export const cardsData = [
     ],
   },
   {
-    title: "Expenses",
+    title: "Speakers",
     color: {
       backGround:
         "linear-gradient(rgb(248, 212, 154) -146.42%, rgb(255 202 113) -46.42%)",
@@ -115,7 +120,7 @@ export const cardsData = [
     },
     barValue: 60,
     value: "4,270",
-    png: UilClipboardAlt,
+    png: InterpreterModeIcon,
     series: [
       {
         name: "Expenses",

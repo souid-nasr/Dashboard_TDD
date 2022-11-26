@@ -7,12 +7,12 @@ const RightSide = () => {
   return (
     <div className="RightSide">
       <div>
-        <h3>Updates</h3>
+        <h3>New Blogs</h3>
         <Updates />
       </div>
       <div>
-        <h3>Customer Review</h3>
-        <CustomerReview />
+        {/* <h3>Customer Review</h3>
+        <CustomerReview /> */}
       </div>
     </div>
   );

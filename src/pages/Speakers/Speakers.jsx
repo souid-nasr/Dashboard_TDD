@@ -81,35 +81,44 @@ const Speakers = () => {
     },
     [validationErrors],
   );
-
   const columns = useMemo(
     () => [
+      // {
+      //   accessorKey: '_id',
+      //   header: 'ID',
+      //   enableColumnOrdering: false,
+      //   enableEditing: false, //disable editing on this column
+      //   enableSorting: false,
+      //   size: 80,
+      // },
       {
-        accessorKey: 'id',
-        header: 'ID',
-        enableColumnOrdering: false,
-        enableEditing: false, //disable editing on this column
-        enableSorting: false,
-        size: 80,
+        accessorKey: 'photo',
+        header: 'Photo',
+        size: 140,
+        muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
+          ...getCommonEditTextFieldProps(cell),
+          type: 'file',
+        }),
+        
       },
       {
-        accessorKey: 'firstName',
-        header: 'Date',
+        accessorKey: 'name',
+        header: 'Name',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
         }),
       },
       {
-        accessorKey: 'lastName',
-        header: 'Last Name',
+        accessorKey: 'profession',
+        header: 'Profession',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
         }),
       },
       {
-        accessorKey: 'email',
+        accessorKey: 'email.',
         header: 'Email',
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
@@ -117,8 +126,8 @@ const Speakers = () => {
         }),
       },
       {
-        accessorKey: 'age',
-        header: 'Age',
+        accessorKey: 'phoneNumber',
+        header: 'Phone',
         size: 80,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
@@ -126,8 +135,8 @@ const Speakers = () => {
         }),
       },
       {
-        accessorKey: 'state',
-        header: 'State',
+        accessorKey: 'biography',
+        header: 'Biography',
         muiTableBodyCellEditTextFieldProps: {
           select: true, //change to select for a dropdown
           children: states.map((state) => (
@@ -140,7 +149,6 @@ const Speakers = () => {
     ],
     [getCommonEditTextFieldProps],
   );
-
   return (
     <>
     <div className='Main'>

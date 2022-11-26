@@ -84,59 +84,59 @@ const Interventions = () => {
 
   const columns = useMemo(
     () => [
+      // {
+      //   accessorKey: 'id',
+      //   header: 'ID',
+      //   enableColumnOrdering: false,
+      //   enableEditing: false, //disable editing on this column
+      //   enableSorting: false,
+      //   size: 80,
+      // },
       {
-        accessorKey: 'id',
-        header: 'ID',
-        enableColumnOrdering: false,
-        enableEditing: false, //disable editing on this column
-        enableSorting: false,
-        size: 80,
-      },
-      {
-        accessorKey: 'firstName',
-        header: 'Date',
+        accessorKey: 'title',
+        header: 'Title',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
         }),
       },
       {
-        accessorKey: 'lastName',
-        header: 'Last Name',
+        accessorKey: 'speaker',
+        header: 'Speaker',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
         }),
       },
       {
-        accessorKey: 'email',
-        header: 'Email',
+        accessorKey: 'time',
+        header: 'Time',
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
           type: 'email',
         }),
       },
-      {
-        accessorKey: 'age',
-        header: 'Age',
-        size: 80,
-        muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
-          ...getCommonEditTextFieldProps(cell),
-          type: 'number',
-        }),
-      },
-      {
-        accessorKey: 'state',
-        header: 'State',
-        muiTableBodyCellEditTextFieldProps: {
-          select: true, //change to select for a dropdown
-          children: states.map((state) => (
-            <MenuItem key={state} value={state}>
-              {state}
-            </MenuItem>
-          )),
-        },
-      },
+      // {
+      //   accessorKey: 'age',
+      //   header: 'Age',
+      //   size: 80,
+      //   muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
+      //     ...getCommonEditTextFieldProps(cell),
+      //     type: 'number',
+      //   }),
+      // },
+      // {
+      //   accessorKey: 'state',
+      //   header: 'State',
+      //   muiTableBodyCellEditTextFieldProps: {
+      //     select: true, //change to select for a dropdown
+      //     children: states.map((state) => (
+      //       <MenuItem key={state} value={state}>
+      //         {state}
+      //       </MenuItem>
+      //     )),
+      //   },
+      // },
     ],
     [getCommonEditTextFieldProps],
   );
@@ -181,7 +181,7 @@ const Interventions = () => {
             onClick={() => setCreateModalOpen(true)}
             variant="contained"
           >
-            Create New Account
+            Create New Intervention
           </Button>
         )}
       />
@@ -213,7 +213,7 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
 
   return (
     <Dialog open={open}>
-      <DialogTitle textAlign="center">Create New Account</DialogTitle>
+      <DialogTitle textAlign="center">Create New Intervention</DialogTitle>
       <DialogContent>
         <form onSubmit={(e) => e.preventDefault()}>
           <Stack

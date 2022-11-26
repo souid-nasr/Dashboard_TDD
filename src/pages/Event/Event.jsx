@@ -23,7 +23,7 @@ function Event() {
                 {/* Profile picture help block*/}
                 <div className="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                 {/* Profile picture upload button*/}
-                <button className="btn btn-primary" type="button">Upload new image</button>
+                <input className="form-control" id="inputPhone" type="file" placeholder="Enter Event Affiche" defaultValue="" />
               </div>
               
             </div>
@@ -54,33 +54,34 @@ function Event() {
                   </div>
                   {/* Form Row        */}
                   <div className="row gx-3 mb-3">
-                    {/* Form Group (organization name)*/}
-                    <div className="col-md-6">
-                      <label className="small mb-1" htmlFor="inputPhone">Organization name</label>
-                      <input className="form-control" id="inputPhone" type="text" placeholder="Enter Event organization name" defaultValue="Start Bootstrap" />
-                    </div>
                     {/* Form Group (location)*/}
                     <div className="col-md-6">
                       <label className="small mb-1" htmlFor="inputLocation">Location</label>
                       <input className="form-control" id="inputLocation" type="text" placeholder="Enter Event location" defaultValue="San Francisco, CA" />
                     </div>
+                    {/* Form Group (organization name)*/}
+                    <div className="col-md-6">
+                      <label className="small mb-1" htmlFor="inputPhone">Description</label>
+                      <input className="form-control" id="inputPhone" type="text" placeholder="Enter Event Description" defaultValue="Start Bootstrap" />
+                    </div>
+                    
                   </div>
                   {/* Form Group (email address)*/}
                   <div className="mb-3">
-                    <label className="small mb-1" htmlFor="inputEmailAddress">Email address</label>
-                    <input className="form-control" id="inputEmailAddress" type="email" placeholder="Enter Event email address" defaultValue="name@example.com" />
+                    <label className="small mb-1" htmlFor="inputSlogon">Slogon</label>
+                    <input className="form-control" id="inputSlogon" type="email" placeholder="Enter Event Slogon" defaultValue="slogon" />
                   </div>
                   {/* Form Row*/}
                   <div className="row gx-3 mb-3">
-                    {/* Form Group (phone number)*/}
+                    {/* Form Group (Affiche)*/}
                     <div className="col-md-6">
-                      <label className="small mb-1" htmlFor="inputPhone">Phone number</label>
-                      <input className="form-control" id="inputPhone" type="tel" placeholder="Enter Event phone number" defaultValue="555-123-4567" />
+                      <label className="small mb-1" htmlFor="inputPhone">Affiche</label>
+                      <input className="form-control" id="inputPhone" type="file" placeholder="Enter Event Affiche" defaultValue="" />
                     </div>
                     {/* Form Group (birthday)*/}
                     <div className="col-md-6">
-                      <label className="small mb-1" htmlFor="inputBirthday">Birthday</label>
-                      <input className="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter Event birthday" defaultValue="06/10/1988" />
+                      <label className="small mb-1" htmlFor="inputVideo">Video</label>
+                      <input className="form-control" id="inputVideo" type="text" name="Video" placeholder="Enter Event Video" defaultValue="" />
                     </div>
                   </div>
                   {/* Save changes button*/}

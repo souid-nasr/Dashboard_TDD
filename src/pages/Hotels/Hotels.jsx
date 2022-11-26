@@ -18,7 +18,7 @@ import { Delete, Edit } from '@mui/icons-material';
 import { data, states } from '../../Data/makeData';
 import Sidebar from '../../components/Sidebar';
 
-const Sponsors = () => {
+const Hotels = () => {
   const [createModalOpen, setCreateModalOpen] = useState(false);
   const [tableData, setTableData] = useState(() => data);
   const [validationErrors, setValidationErrors] = useState({});
@@ -84,24 +84,16 @@ const Sponsors = () => {
 
   const columns = useMemo(
     () => [
-      // {
-      //   accessorKey: 'id',
-      //   header: 'ID',
-      //   enableColumnOrdering: false,
-      //   enableEditing: false, //disable editing on this column
-      //   enableSorting: false,
-      //   size: 80,
-      // },
+    //   {
+    //     accessorKey: 'id',
+    //     header: 'ID',
+    //     enableColumnOrdering: false,
+    //     enableEditing: false, //disable editing on this column
+    //     enableSorting: false,
+    //     size: 80,
+    //   },
       {
-        accessorKey: 'logo',
-        header: 'Logo',
-        size: 140,
-        muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
-          ...getCommonEditTextFieldProps(cell),
-        }),
-      },
-      {
-        accessorKey: 'name',
+        accessorKey: 'Name',
         header: 'Name',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
@@ -109,42 +101,50 @@ const Sponsors = () => {
         }),
       },
       {
-        accessorKey: 'email.',
-        header: 'Email',
+        accessorKey: 'location',
+        header: 'Location',
+        size: 140,
+        muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
+          ...getCommonEditTextFieldProps(cell),
+        }),
+      },
+      {
+        accessorKey: 'photo',
+        header: 'Photo',
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
           type: 'email',
         }),
       },
-      {
-        accessorKey: 'Phone',
-        header: 'Phone',
-        size: 80,
-        muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
-          ...getCommonEditTextFieldProps(cell),
-          type: 'number',
-        }),
-      },
-      {
-        accessorKey: 'category',
-        header: 'Category',
-        muiTableBodyCellEditTextFieldProps: {
-          select: true, //change to select for a dropdown
-          children: states.map((state) => (
-            <MenuItem key={state} value={state}>
-              {state}
-            </MenuItem>
-          )),
-        },
-      },
+    //   {
+    //     accessorKey: 'age',
+    //     header: 'Age',
+    //     size: 80,
+    //     muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
+    //       ...getCommonEditTextFieldProps(cell),
+    //       type: 'number',
+    //     }),
+    //   },
+    //   {
+    //     accessorKey: 'state',
+    //     header: 'State',
+    //     muiTableBodyCellEditTextFieldProps: {
+    //       select: true, //change to select for a dropdown
+    //       children: states.map((state) => (
+    //         <MenuItem key={state} value={state}>
+    //           {state}
+    //         </MenuItem>
+    //       )),
+    //     },
+    //   },
     ],
     [getCommonEditTextFieldProps],
   );
 
   return (
-    <>
+
     <div className='Main'>
-    <h1>Sponsors List</h1>
+    <h1>Partners List</h1>
 
       <MaterialReactTable
         displayColumnDefOptions={{
@@ -192,7 +192,7 @@ const Sponsors = () => {
         onSubmit={handleCreateNewRow}
       />
     </div>
-    </>
+
 
   );
 };
@@ -257,4 +257,4 @@ const validateEmail = (email) =>
     );
 const validateAge = (age) => age >= 18 && age <= 50;
 
-export default Sponsors;
+export default Hotels;

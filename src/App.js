@@ -12,6 +12,8 @@ import Participants from './pages/Participants/Participants';
 import SignInSide from './pages/SignIn/SignIn';
 import WithSide from './components/WithSide';
 import WithoutSide from './components/WithoutSide';
+import Testimonials from './pages/Testimonials/Testimonials';
+import Hotels from './pages/Hotels/Hotels';
 function App({location}) {
   return (
     <div>
@@ -35,6 +37,9 @@ function App({location}) {
           <Route exact path="/participants" element={<Participants/>}/>
           <Route exact path="/blogs" element={<Blogs/>}/>
           <Route exact path="/team" element={<Team/>}/>
+          <Route exact path="/testimentials" element={<Testimonials/>}/>
+          <Route exact path="/hotels" element={<Hotels/>}/>
+
           </Route>
         </Routes>
       </div>

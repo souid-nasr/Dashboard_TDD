@@ -84,16 +84,24 @@ const Blogs = () => {
 
   const columns = useMemo(
     () => [
+      // {
+      //   accessorKey: 'id',
+      //   header: 'ID',
+      //   enableColumnOrdering: false,
+      //   enableEditing: false, //disable editing on this column
+      //   enableSorting: false,
+      //   size: 80,
+      // },
       {
-        accessorKey: 'id',
-        header: 'ID',
-        enableColumnOrdering: false,
-        enableEditing: false, //disable editing on this column
-        enableSorting: false,
-        size: 80,
+        accessorKey: 'author',
+        header: 'Author',
+        size: 140,
+        muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
+          ...getCommonEditTextFieldProps(cell),
+        }),
       },
       {
-        accessorKey: 'firstName',
+        accessorKey: 'Date',
         header: 'Date',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
@@ -101,51 +109,41 @@ const Blogs = () => {
         }),
       },
       {
-        accessorKey: 'lastName',
-        header: 'Last Name',
-        size: 140,
+        accessorKey: 'paragraph',
+        header: 'Paragraph',
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
+          type: 'texterea',
         }),
       },
       {
-        accessorKey: 'email',
-        header: 'Email',
-        muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
-          ...getCommonEditTextFieldProps(cell),
-          type: 'email',
-        }),
-      },
-      {
-        accessorKey: 'age',
-        header: 'Age',
+        accessorKey: 'Photo',
+        header: 'photo',
         size: 80,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
           type: 'number',
         }),
       },
-      {
-        accessorKey: 'state',
-        header: 'State',
-        muiTableBodyCellEditTextFieldProps: {
-          select: true, //change to select for a dropdown
-          children: states.map((state) => (
-            <MenuItem key={state} value={state}>
-              {state}
-            </MenuItem>
-          )),
-        },
-      },
+      // {
+      //   accessorKey: 'state',
+      //   header: 'State',
+      //   muiTableBodyCellEditTextFieldProps: {
+      //     select: true, //change to select for a dropdown
+      //     children: states.map((state) => (
+      //       <MenuItem key={state} value={state}>
+      //         {state}
+      //       </MenuItem>
+      //     )),
+      //   },
+      // },
     ],
     [getCommonEditTextFieldProps],
   );
 
   return (
     <div className='Main'>
-    <div className='MainGlass'>
-    <Sidebar/>
-    <div className='container'>
+
               <h1>Blogs</h1>
       <MaterialReactTable
         displayColumnDefOptions={{
@@ -182,7 +180,7 @@ const Blogs = () => {
             onClick={() => setCreateModalOpen(true)}
             variant="contained"
           >
-            Create New Account
+            Create New Blog
           </Button>
         )}
       />
@@ -193,8 +191,7 @@ const Blogs = () => {
         onSubmit={handleCreateNewRow}
       />
     </div>
-    </div>
-    </div>
+
   );
 };
 
@@ -215,7 +212,7 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
 
   return (
     <Dialog open={open}>
-      <DialogTitle textAlign="center">Create New Account</DialogTitle>
+      <DialogTitle textAlign="center">Create New Blog</DialogTitle>
       <DialogContent>
         <form onSubmit={(e) => e.preventDefault()}>
           <Stack
@@ -241,7 +238,7 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
       <DialogActions sx={{ p: '1.25rem' }}>
         <Button onClick={onClose}>Cancel</Button>
         <Button color="secondary" onClick={handleSubmit} variant="contained">
-          Create New Account
+          Create New Blog
         </Button>
       </DialogActions>
     </Dialog>

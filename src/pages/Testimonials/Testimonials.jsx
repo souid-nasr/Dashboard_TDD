@@ -18,7 +18,7 @@ import { Delete, Edit } from '@mui/icons-material';
 import { data, states } from '../../Data/makeData';
 import Sidebar from '../../components/Sidebar';
 
-const Sponsors = () => {
+const Testimonials = () => {
   const [createModalOpen, setCreateModalOpen] = useState(false);
   const [tableData, setTableData] = useState(() => data);
   const [validationErrors, setValidationErrors] = useState({});
@@ -84,25 +84,25 @@ const Sponsors = () => {
 
   const columns = useMemo(
     () => [
-      // {
-      //   accessorKey: 'id',
-      //   header: 'ID',
-      //   enableColumnOrdering: false,
-      //   enableEditing: false, //disable editing on this column
-      //   enableSorting: false,
-      //   size: 80,
-      // },
+    //   {
+    //     accessorKey: 'id',
+    //     header: 'ID',
+    //     enableColumnOrdering: false,
+    //     enableEditing: false, //disable editing on this column
+    //     enableSorting: false,
+    //     size: 80,
+    //   },
       {
-        accessorKey: 'logo',
-        header: 'Logo',
+        accessorKey: 'firstName.',
+        header: 'Date',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
         }),
       },
       {
-        accessorKey: 'name',
-        header: 'Name',
+        accessorKey: 'lastName.',
+        header: 'Last Name',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
@@ -117,34 +117,34 @@ const Sponsors = () => {
         }),
       },
       {
-        accessorKey: 'Phone',
-        header: 'Phone',
+        accessorKey: 'Paragraph',
+        header: 'Paragraph',
         size: 80,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
           type: 'number',
         }),
       },
-      {
-        accessorKey: 'category',
-        header: 'Category',
-        muiTableBodyCellEditTextFieldProps: {
-          select: true, //change to select for a dropdown
-          children: states.map((state) => (
-            <MenuItem key={state} value={state}>
-              {state}
-            </MenuItem>
-          )),
-        },
-      },
+    //   {
+    //     accessorKey: 'state',
+    //     header: 'State',
+    //     muiTableBodyCellEditTextFieldProps: {
+    //       select: true, //change to select for a dropdown
+    //       children: states.map((state) => (
+    //         <MenuItem key={state} value={state}>
+    //           {state}
+    //         </MenuItem>
+    //       )),
+    //     },
+    //   },
     ],
     [getCommonEditTextFieldProps],
   );
 
   return (
-    <>
+
     <div className='Main'>
-    <h1>Sponsors List</h1>
+    <h1>Testimonials List</h1>
 
       <MaterialReactTable
         displayColumnDefOptions={{
@@ -181,7 +181,7 @@ const Sponsors = () => {
             onClick={() => setCreateModalOpen(true)}
             variant="contained"
           >
-            Create New Account
+            Create New Testimonial
           </Button>
         )}
       />
@@ -192,7 +192,7 @@ const Sponsors = () => {
         onSubmit={handleCreateNewRow}
       />
     </div>
-    </>
+
 
   );
 };
@@ -214,7 +214,7 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
 
   return (
     <Dialog open={open}>
-      <DialogTitle textAlign="center">Create New Account</DialogTitle>
+      <DialogTitle textAlign="center">Create New Testimonial</DialogTitle>
       <DialogContent>
         <form onSubmit={(e) => e.preventDefault()}>
           <Stack
@@ -240,7 +240,7 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
       <DialogActions sx={{ p: '1.25rem' }}>
         <Button onClick={onClose}>Cancel</Button>
         <Button color="secondary" onClick={handleSubmit} variant="contained">
-          Create New Account
+          Create New Testimonial
         </Button>
       </DialogActions>
     </Dialog>
@@ -257,4 +257,4 @@ const validateEmail = (email) =>
     );
 const validateAge = (age) => age >= 18 && age <= 50;
 
-export default Sponsors;
+export default Testimonials;
