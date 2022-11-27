@@ -144,7 +144,7 @@ const Participants = () => {
   return (
 
     <div className='Main'>
-    <h1>Partners List</h1>
+    <h1>Participants List</h1>
 
       <MaterialReactTable
         displayColumnDefOptions={{

@@ -10,11 +10,23 @@
         justify-content:flex-start;
         margin-top: 2rem;
     }
+    /* .Main h1{
+        display: none;
+    } */
+    .table{
+        width: 40p;
+    }
 }
 
 @media screen and (max-width: 768px)
 {
     .Main{
-        align-items: center;
+        width: 350px;
+    }
+    .Main h1{
+        display: none;
+    }
+    .table{
+        
     }
 }

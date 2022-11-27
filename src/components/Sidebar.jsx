@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import "./Sidebar.css";
 import Logo from "../imgs/logo1.png";
 import { UilSignOutAlt } from "@iconscout/react-unicons";
 import { SidebarData } from "../Data/Data";
 import { UilBars } from "@iconscout/react-unicons";
+import CloseIcon from '@mui/icons-material/Close';
 import { motion } from "framer-motion";
 import {Link} from 'react-router-dom'
 const Sidebar = () => {
@@ -19,12 +20,15 @@ const Sidebar = () => {
       left : '-60%'
     }
   }
+  const menuRef = useRef(null);
+
+  const toggleMenu = () => menuRef.current.classList.toggle("menu__active");
   console.log(window.innerWidth)
   return (
     <>
-      {/* <div className="bars" style={expanded?{left: '60%'}:{left: '5%'}} onClick={()=>setExpaned(!expanded)}>
-        <UilBars />
-      </div> */}
+      <div className="bars" style={expanded?{left: '60%'}:{left: '5%'}} onClick={()=>setExpaned(!expanded)}>
+       {!expanded? <UilBars />:<CloseIcon/>}
+      </div>
     <motion.div className='sidebar'
     variants={sidebarVariants}
     animate={window.innerWidth<=768?`${expanded}`:''}

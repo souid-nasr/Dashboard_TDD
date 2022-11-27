@@ -142,9 +142,8 @@ const Blogs = () => {
   );
 
   return (
-    <div className='Main'>
-
-              <h1>Blogs</h1>
+    <div className='Main' >
+              <h1>Blogs</h1>     
       <MaterialReactTable
         displayColumnDefOptions={{
           'mrt-row-actions': {

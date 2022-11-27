@@ -89,29 +89,34 @@
 
 @media screen and (max-width: 768px) {
   .sidebar{
-    position: fixed;
+    position:absolute;
     z-index: 9;
     background: #DDE2FF;
-    width: 55%;
+    background-size: 100%;
+    width: 50%;
     padding-right: 1rem;
-    height: 100%;
+    height: 140%;
+    
+  }
+  .menu{
+    padding-top: 10px;
   }
   .menuItem>span{
     display: block;
   }
-  .logo{
-    display: flex;
-  }
+  /* .logo{
+    display: none;
+  } */
   .menu .menuItem:last-child {
     position: relative;
-    margin-top: 6rem;
+    /* margin-top: .01rem; */
   }
   .bars{
     display: flex;
     position: fixed;
-    top: 2rem;
+    top: .001rem;
     left:60%;
-    background:#DDE2FF;
+    background:none;
     padding:10px;
     border-radius: 10px;
     z-index: 9;
