@@ -101,8 +101,16 @@ const Interventions = () => {
         }),
       },
       {
-        accessorKey: 'speaker',
-        header: 'Speaker',
+        accessorKey: 'firstName',
+        header: 'Speaker First Name',
+        size: 140,
+        muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
+          ...getCommonEditTextFieldProps(cell),
+        }),
+      },
+      {
+        accessorKey: 'lastName',
+        header: 'Speaker Last Name',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),

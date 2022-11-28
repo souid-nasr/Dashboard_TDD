@@ -93,8 +93,16 @@ const Blogs = () => {
       //   size: 80,
       // },
       {
-        accessorKey: 'author',
-        header: 'Author',
+        accessorKey: 'firstName',
+        header: 'Author First Name',
+        size: 140,
+        muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
+          ...getCommonEditTextFieldProps(cell),
+        }),
+      },
+      {
+        accessorKey: 'lastName',
+        header: 'Author Last Name',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),

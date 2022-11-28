@@ -102,8 +102,16 @@ const Team = () => {
         
       },
       {
-        accessorKey: 'name',
-        header: 'Name',
+        accessorKey: 'firstName',
+        header: 'First Name',
+        size: 140,
+        muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
+          ...getCommonEditTextFieldProps(cell),
+        }),
+      },
+      {
+        accessorKey: 'lastName',
+        header: 'Last Name',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),

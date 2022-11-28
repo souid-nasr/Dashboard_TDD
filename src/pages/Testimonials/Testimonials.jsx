@@ -94,7 +94,7 @@ const Testimonials = () => {
     //   },
       {
         accessorKey: 'firstName.',
-        header: 'Date',
+        header: 'First Name',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),

@@ -94,7 +94,7 @@ const Participants = () => {
       },
       {
         accessorKey: 'firstName',
-        header: 'Date',
+        header: 'First Name',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
@@ -160,6 +160,9 @@ const Participants = () => {
         editingMode="modal" //default
         enableColumnOrdering
         enableEditing
+        pageCount={75}
+        enableSelectAll="true"
+        positionActionsColumn="last"
         onEditingRowSave={handleSaveRowEdits}
         renderRowActions={({ row, table }) => (
           <Box sx={{ display: 'flex', gap: '1rem' }}>
